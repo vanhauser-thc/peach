@@ -20,5 +20,8 @@ RUN mkdir /peach && cd /peach && \
 RUN echo 'alias joe="joe --wordwrap"' >> ~/.bashrc
 
 WORKDIR    /peach
+ENV        IS_DOCKER="1"
 ENV        PATH="$PATH:/peach"
+ENV        PS1="docker[peach] \w # "
+ENV        DOCKER_PS1="docker[peach] \w # "
 ENTRYPOINT ["/peach/peach"]
