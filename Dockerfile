@@ -18,10 +18,10 @@ RUN mkdir /peach && cd /peach && \
     rm -f peach-3.1.124-linux-x86_64-release.zip
 
 RUN echo 'alias joe="joe --wordwrap"' >> ~/.bashrc
+RUN echo 'export PS1="[peach]$PS1"' >> ~/.bashrc
 
 WORKDIR    /peach
 ENV        IS_DOCKER="1"
 ENV        PATH="$PATH:/peach"
-ENV        PS1="docker[peach] \w # "
 ENV        DOCKER_PS1="docker[peach] \w # "
 ENTRYPOINT ["/peach/peach"]
