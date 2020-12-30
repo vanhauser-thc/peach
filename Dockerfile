@@ -24,4 +24,5 @@ WORKDIR    /peach
 ENV        IS_DOCKER="1"
 ENV        PATH="$PATH:/peach"
 ENV        DOCKER_PS1="docker[peach] \w # "
+ENV        DOTNET_CLI_TELEMETRY_OPTOUT=1
 ENTRYPOINT ["/peach/peach"]
